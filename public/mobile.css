@@ -1,0 +1,163 @@
+/* Designed for guests reading and navigating with one hand on a phone. */
+@media (max-width: 760px) {
+  html { scroll-padding-top: calc(82px + env(safe-area-inset-top)); -webkit-text-size-adjust: 100%; }
+  body { font-size: 15px; padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+  body::after { display: none; }
+  .modal-open { overflow: hidden; }
+  h2 { font-size: clamp(36px, 10vw, 46px); letter-spacing: -1px; }
+  .eyebrow { font-size: 10px; letter-spacing: 1.7px; color: #81612c; }
+  .section-pad { padding: 54px 24px; }
+  .header { height: calc(64px + env(safe-area-inset-top)); padding: env(safe-area-inset-top) 20px 0; }
+  .monogram { font-size: 28px; padding: 5px 0; }
+  .monogram i { font-size: 8px; }
+  .header nav { gap: 12px; }
+  .header nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 12px; }
+  .header nav a:first-child, .header-cta { display: none; }
+
+  .hero { display: flex; flex-direction: column; min-height: 0; padding: 26px 24px 44px; }
+  .hero-frame { inset: 10px; }
+  .hero-copy { padding: 0; width: 100%; }
+  .hero-copy > .eyebrow { font-size: 9px; letter-spacing: 1.4px; }
+  .tiny-flower { font-size: 12px; margin: 0 4px; }
+  .tamil { font-size: 11px; margin: 10px 0 14px; }
+  .hero h1 { display: flex; justify-content: center; align-items: baseline; gap: 8px; font-size: clamp(38px, 10.7vw, 49px); line-height: 1; letter-spacing: -1.3px; white-space: nowrap; }
+  .ampersand { display: inline; font-size: .65em; line-height: 1; margin: 0; }
+  .hero-subtitle { font-size: 21px; margin-top: 14px; }
+  .hero-date { margin: 18px 0; }
+  .hero-date > span { font-size: 11px; letter-spacing: 1.5px; }
+  .hero-date i { font-size: 20px; }
+  .hero .button { padding: 14px 20px; min-width: min(100%, 280px); }
+  .temple-art { order: -1; width: min(100%, 280px); padding: 0; margin: 4px auto 23px; }
+  .temple-art > img { height: clamp(200px, 31svh, 270px); padding: 5px; object-position: center 12%; }
+  .temple-art figcaption { font-size: 8px; letter-spacing: 1px; margin-top: 12px; }
+  .hanging { top: 14px; font-size: 13px; }
+  .hanging::before { height: 14px; }
+  .hanging span { font-size: 16px; }
+  .hanging b { font-size: 22px; }
+  .hanging-left { left: 24px; }
+  .hanging-right { right: 24px; }
+  .hero-bottom { display: none; }
+
+  .button { min-height: 48px; font-size: 13px; letter-spacing: 0; padding: 13px 18px; gap: 15px; }
+  .button:hover { transform: none; }
+  .invitation h2 { margin-top: 15px; }
+  .invitation-text { font-size: 15px; line-height: 1.8; }
+  .invitation-text br { display: none; }
+  .families { gap: 14px; margin: 28px 0; align-items: flex-start; }
+  .families > div { flex: 1; min-width: 0; }
+  .families h3 { font-size: 34px; }
+  .families p { font-size: 12px; margin-top: 8px; }
+  .families strong { display: block; font-size: 13px; line-height: 1.7; }
+  .family-amp { font-size: 28px; }
+  .blessing { font-size: 24px; }
+  .countdown-band { flex-direction: column; gap: 22px; padding: 32px 20px; text-align: center; }
+  .countdown-band .eyebrow { font-size: 9px; }
+  .countdown-band h2 { font-size: 39px; }
+  .countdown-band > div > p:last-child { font-size: 12px; line-height: 1.7; max-width: 330px; }
+  .countdown { gap: 10px; width: 100%; max-width: 350px; justify-content: center; }
+  .countdown > div { min-width: 0; flex: 1; }
+  .countdown strong { font-size: 44px; }
+  .countdown span { font-size: 9px; letter-spacing: 1px; }
+  .countdown b { font-size: 20px; }
+
+  .celebrations > .section-heading { padding: 50px 24px 0; margin-bottom: 25px; }
+  .section-heading { margin-bottom: 30px; }
+  .section-heading h2 { font-size: clamp(36px, 10vw, 44px); }
+  .section-heading > p:last-child:not(.eyebrow) { font-size: 14px; }
+  .event-nav { gap: 8px; padding: 0 16px 28px; }
+  .event-nav a { flex: 1; font-size: 21px; line-height: 1.2; min-height: 60px; padding: 6px 0; }
+  .event-nav a > span { font-size: 10px; letter-spacing: 1px; margin-bottom: 6px; }
+  .nav-flower { display: none; }
+  .event { padding: 38px 24px; }
+  .event-inner { display: flex; flex-direction: column; gap: 24px; }
+  .event-intro { order: 0; padding: 0; width: 100%; }
+  .event-intro h2 { font-size: clamp(37px, 10.5vw, 46px); line-height: 1.06; margin: 12px 0 16px; }
+  .event-description { font-size: 15px; line-height: 1.75; opacity: .95; max-width: none; }
+  .event-visual { order: 1; width: 100%; max-width: 430px; margin: 0 auto; }
+  .chapter { display: none; }
+  .scene { margin: 0 5px; border-radius: 45% 45% 2px 2px; }
+  .scene img { aspect-ratio: 1.35; height: auto; }
+  .scene-caption { font-size: 9px; letter-spacing: 1px; margin-top: 17px; opacity: .9; }
+  .event-quote { font-size: 22px; line-height: 1.3; margin-top: 9px; }
+  .event-copy { order: 2; padding: 0; width: 100%; }
+  .event-when { gap: 15px; margin: 0 0 20px; }
+  .date-stamp { min-width: 65px; padding: 7px 12px; flex-shrink: 0; }
+  .date-stamp strong { font-size: 39px; }
+  .date-stamp > span { font-size: 10px; }
+  .event-when h3 { font-size: 14px; line-height: 1.6; }
+  .event-when p { font-size: 16px; }
+  .event-when small { font-size: 11px; }
+  .dress { gap: 9px; font-size: 10px; letter-spacing: .5px; padding: 14px 0; }
+  .dress strong { font-size: 14px; }
+  .venue { gap: 12px; margin: 22px 0; }
+  .venue h3 { font-size: 31px; }
+  .venue p { font-size: 15px; line-height: 1.75; opacity: .95; max-width: none; }
+  .event-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .event-button { width: 100%; min-height: 50px; font-size: 15px; }
+  .calendar-button { width: 100%; min-height: 48px; font-size: 14px; border: 1px solid #a88a5380; padding: 12px; }
+  .host { font-size: 12px; line-height: 1.75; opacity: .9; margin-top: 18px; }
+  .event-details { order: 3; margin: 0; width: 100%; }
+  .event-details summary { font-size: 25px; line-height: 1.25; min-height: 64px; gap: 18px; padding: 16px 0; }
+  .details-symbol { font-size: 24px; }
+  .itinerary { grid-template-columns: 1fr; padding: 10px 0 24px; gap: 25px; }
+  .itinerary ol { grid-template-columns: 1fr; padding-left: 5px; }
+  .itinerary li { border-top: none; border-left: 1px solid #a88a5370; padding: 0 0 22px 23px; }
+  .itinerary li:last-child { padding-bottom: 0; border-left-color: transparent; }
+  .itinerary-dot { left: -4px; top: 9px; }
+  .itinerary h4 { font-size: 15px; line-height: 1.6; }
+  .itinerary li p { font-size: 13px; margin-top: 3px; opacity: .9; }
+  .coordinator { border-left: 0; border-top: 1px solid #a88a5350; padding: 20px 0 0; }
+  .coordinator > span { font-size: 9px; letter-spacing: 1px; opacity: .9; }
+  .coordinator strong { font-size: 29px; margin: 8px 0; }
+  .coordinator > a { display: inline-flex; align-items: center; justify-content: space-between; align-self: flex-start; min-height: 48px; width: 100%; padding: 11px 14px; border: 1px solid #a88a5380; font-size: 16px; }
+
+  .details-grid { grid-template-columns: 1fr; gap: 18px; }
+  .detail-card { padding: 25px; }
+  .detail-card h3 { font-size: 31px; margin-top: 8px; }
+  .detail-card p { font-size: 15px; line-height: 1.8; margin-bottom: 15px; }
+  .detail-card a { font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; }
+  .detail-card small { font-size: 11px; }
+  .questions { margin-top: 32px; flex-direction: column; gap: 15px; }
+  .questions h3 { font-size: 31px; }
+  .questions > p { align-self: flex-start; font-size: 14px; }
+  .closing { padding-top: 65px; }
+  .closing-arch { top: 25px; width: calc(100% - 35px); }
+  .closing h2 { font-size: clamp(62px, 17vw, 80px); }
+  .closing > div > p:not(.eyebrow):not(.closing-names) { font-size: 14px; padding: 0 5px; }
+  .closing-names { font-size: 32px; }
+  #share-invite { width: 100%; max-width: 320px; }
+  footer { flex-wrap: wrap; justify-content: center; gap: 12px 20px; padding: 24px 20px; }
+  footer .footer-monogram { font-size: 28px; }
+  footer p { font-size: 9px; letter-spacing: 1px; text-align: center; }
+  footer p > span { margin: 0 7px; }
+  footer > a:last-child { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; font-size: 13px; }
+
+  .mobile-event-nav { position: fixed; z-index: 40; inset: auto 0 0; display: grid; grid-template-columns: repeat(4, 1fr); padding: 7px 8px calc(7px + env(safe-area-inset-bottom)); background: #fffaf0; border-top: 1px solid #c9b58b; box-shadow: 0 -4px 18px #542b300a; }
+  .mobile-event-nav a { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 56px; border-radius: 4px; padding: 6px 3px; gap: 3px; color: #6d5041; }
+  .mobile-event-nav span { font-size: 9px; letter-spacing: .8px; }
+  .mobile-event-nav strong { font-size: 12px; font-weight: 600; line-height: 1.5; }
+  .mobile-event-nav a[aria-current] { box-shadow: inset 0 2px #a37c3b; }
+  dialog { max-width: 520px; max-height: calc(100dvh - 24px); overflow-y: auto; width: calc(100% - 24px); padding: 38px 24px 28px; }
+  dialog h2 { font-size: 36px; line-height: 1.1; }
+  dialog > p:not(.eyebrow) { font-size: 14px; }
+  .dialog-close { display: grid; place-items: center; min-width: 44px; min-height: 44px; top: 3px; right: 3px; font-size: 29px; }
+  .calendar-options .button { width: 100%; font-size: 14px; }
+}
+
+@media (max-width: 360px) {
+  .header { padding: 0 16px; }
+  .header nav { gap: 10px; }
+  .header nav a { font-size: 11px; }
+  .hero { padding-inline: 20px; }
+  .hero h1 { gap: 5px; }
+  .families { flex-direction: column; align-items: center; gap: 16px; }
+  .families > div { width: 100%; }
+  .family-amp { line-height: 1; }
+  .dress { flex-wrap: wrap; }
+  .dress strong { margin-left: auto; }
+}
+
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 1000px) {
+  .header { position: relative; }
+  dialog { max-height: calc(100dvh - 16px); overflow-y: auto; }
+}

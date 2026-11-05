@@ -19,6 +19,12 @@ Run `npm run export` to produce `dist/Kamesh-and-Preetha-Wedding.html`. Download
 
 ## Content and features
 
+The phone layout puts the temple artwork and wedding names in a compact opening, with larger body text, full-width map/calendar actions, and a fixed bottom menu for Haldi, reception, wedding and guest details. Navigation tracks the current section. Call buttons and other key controls have at least 44px touch targets, and bottom spacing respects phone safe areas. The calendar dialog locks background scrolling and supports short landscape screens.
+
+Hosted pages choose 600px or 1000px WebP illustrations for the display size, lazy-load event artwork and use locally served WOFF2 fonts. The original image/font sources stay in the repository, while the downloadable ZIP contains only the smaller web assets and the complete original PDF. The PDF loads only when the guest opens it. Run `python3 tools/package-website.py` to refresh the GitHub ZIP at `downloads/Kamesh-Preetha-Website.zip`.
+
+Browser validation covers 320×568, 360×800, 390×844, 430×932, 768×1024, 844×390 and 1440×1000 viewports using Chromium with touch emulation on phones. Physical-device Safari validation remains a manual check.
+
 - Three distinct event chapters, all event details transcribed from the supplied physical invitation.
 - Countdown to 4 December 2026, 7:30 AM in India Standard Time.
 - Google Maps venue searches, call links, Google Calendar links and downloadable RFC 5545 calendars, with event times converted from IST to UTC.

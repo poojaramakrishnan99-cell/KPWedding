@@ -6,14 +6,20 @@ await mkdir(output,{recursive:true});
 const data=async(name,mime)=>`data:${mime};base64,${(await readFile(new URL(name,root))).toString('base64')}`;
 let html=await readFile(new URL('index.html',root),'utf8');
 let css=await readFile(new URL('style.css',root),'utf8');
-for(const name of ['cormorant.ttf','manrope.ttf'])css=css.replaceAll('/'+name,await data(name,'font/ttf'));
+for(const name of ['cormorant.woff2','manrope.woff2'])css=css.replaceAll('/'+name,await data(name,'font/woff2'));
+css+='\n'+await readFile(new URL('mobile.css',root),'utf8');
+html=html.replace('<link rel="stylesheet" href="/mobile.css">','');
+// The portable file uses one embedded image per illustration; hosted pages use srcset.
+html=html.replace(/ srcset="[^"]*"/g,'');
 const images={};
-for(const name of ['temple.png','beach.png','resort.png','mahal.png','lotus.svg']){
-  images[name]=await data('images/'+name,name.endsWith('.svg')?'image/svg+xml':'image/png');
+for(const name of ['temple-1000.webp','beach-1000.webp','resort-1000.webp','mahal-1000.webp','lotus.svg']){
+  images[name]=await data('images/'+name,name.endsWith('.svg')?'image/svg+xml':'image/webp');
   html=html.replaceAll('/images/'+name,images[name]);
 }
+html=html.replace('/images/temple-600.webp',images['temple-1000.webp']);
 let js=await readFile(new URL('app.js',root),'utf8');
-js=js.replace('src="/images/${e.image}"','src="${embeddedImages[e.image]}"');
+js=js.replace('src="/images/${e.image}-600.webp"','src="${embeddedImages[e.image+\'-1000.webp\']}"');
+js=js.replace(' srcset="/images/${e.image}-600.webp 600w, /images/${e.image}-1000.webp 1000w"','');
 const pdf=(await readFile(new URL('invitation.pdf',root))).toString('base64');
 const pdfScript=`
 document.querySelector('a[href="/invitation.pdf"]').addEventListener('click',function(event){

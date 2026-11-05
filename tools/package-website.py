@@ -10,6 +10,9 @@ with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as arch
     for file in sorted(public.rglob("*")):
         if not file.is_file():
             continue
+        # Keep the original image/font sources in Git, but ship only web assets.
+        if file.suffix in {".png", ".ttf"}:
+            continue
         contents = file.read_bytes()
         if file.suffix in {".html", ".css", ".js"}:
             text = contents.decode("utf-8")
@@ -17,10 +20,12 @@ with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as arch
                 text = text.replace('href="/', 'href="./').replace('src="/', 'src="./')
                 text = text.replace('<script type="module" src=', '<script defer src=')
             elif file.name == "style.css":
-                text = text.replace("url('/cormorant.ttf')", "url('./cormorant.ttf')")
-                text = text.replace("url('/manrope.ttf')", "url('./manrope.ttf')")
+                text = text.replace("url('/cormorant.woff2')", "url('./cormorant.woff2')")
+                text = text.replace("url('/manrope.woff2')", "url('./manrope.woff2')")
             elif file.name == "app.js":
                 text = text.replace('src="/images/', 'src="./images/')
+            if file.suffix in {".html", ".js"}:
+                text = text.replace('"/images/', '"./images/').replace(', /images/', ', ./images/')
             contents = text.encode("utf-8")
         archive.writestr(str(Path("Kamesh-Preetha-Website") / file.relative_to(public)), contents)
     archive.writestr("Kamesh-Preetha-Website/READ-ME.txt", """Kamesh & Preetha wedding website
