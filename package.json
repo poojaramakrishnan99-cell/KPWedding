@@ -1,0 +1,7 @@
+{
+  "name": "kamesh-preetha-wedding",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "dev": "node server.mjs", "export": "node tools/export.mjs", "check": "node --check public/app.js && node --check server.mjs && node --check tools/export.mjs" }
+}
